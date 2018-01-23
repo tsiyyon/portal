@@ -8,12 +8,14 @@ ext {
     jaxrs = '2.1'
     jackson = '2.9.3'
     jersey = '2.26'
+    json_path = '2.2.0'
 }
 dependencies {
     compile "javax.ws.rs:javax.ws.rs-api:$jaxrs"
     compile "com.fasterxml.jackson.core:jackson-core:$jackson"
     compile "com.fasterxml.jackson.core:jackson-databind:$jackson"
     compile "org.glassfish.jersey.media:jersey-media-json-jackson:$jersey"
+    compile "com.jayway.jsonpath:json-path:$json_path"
 
     testCompile "org.glassfish.jersey.test-framework:jersey-test-framework-core:$jersey"
     testCompile "org.glassfish.jersey.core:jersey-common:$jersey"

@@ -7,13 +7,12 @@ public interface Request<T> {
 
     T get();
 
-    <V> V field(String filter);
+    <V> V field(Addressable<T> filter);
 
     void execute(Operation<T> operation);
 
     interface Operation<T> {
         void execute(Operator<T> operator);
-
     }
 
     interface Operator<T> {
@@ -21,7 +20,7 @@ public interface Request<T> {
     }
 
     class Empty implements Request<Object> {
-        public Empty() {
+        Empty() {
         }
 
         @Override
@@ -30,7 +29,7 @@ public interface Request<T> {
         }
 
         @Override
-        public <V> V field(String filter) {
+        public <V> V field(Addressable<Object> filter) {
             return null;
         }
 
@@ -38,5 +37,9 @@ public interface Request<T> {
         public void execute(Operation<Object> operation) {
 
         }
+    }
+
+    interface Addressable<R> {
+        <T> T locate(Object context);
     }
 }

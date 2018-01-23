@@ -2,7 +2,8 @@ package com.morpheus.portal;
 
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
-import java.util.Map;
+
+import static com.jayway.jsonpath.JsonPath.using;
 
 public class JerseyRequest<T> implements Request<T> {
     @Context
@@ -19,17 +20,12 @@ public class JerseyRequest<T> implements Request<T> {
     }
 
     @Override
-    public <V> V field(String filter) {
-        if (Map.class.isAssignableFrom(raw.getClass())) {
-            return (V) ((Map) raw).get("notes");
-        }
-        return null;
+    public <V> V field(Addressable<T> filter) {
+        return filter.locate(raw);
     }
 
     @Override
     public void execute(Request.Operation<T> operation) {
         operation.execute(consumer -> consumer.accept(JerseyRequest.this.raw));
     }
-
-
 }
