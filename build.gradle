@@ -1,4 +1,7 @@
-apply plugin: 'java'
+plugins {
+    id "java"
+    id "idea"
+}
 
 repositories {
     jcenter()
@@ -10,6 +13,7 @@ ext {
     jersey = '2.26'
     json_path = '2.2.0'
 }
+
 dependencies {
     compile "javax.ws.rs:javax.ws.rs-api:$jaxrs"
     compile "com.fasterxml.jackson.core:jackson-core:$jackson"

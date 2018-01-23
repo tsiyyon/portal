@@ -1,4 +1,4 @@
-package com.morpheus.portal;
+package me.tzion.portal;
 
 import org.glassfish.jersey.jackson.JacksonFeature;
 

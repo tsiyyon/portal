@@ -1,5 +1,6 @@
-package com.morpheus.portal;
+package me.tzion.portal;
 
+import me.tzion.portal.core.Request;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.junit.Test;

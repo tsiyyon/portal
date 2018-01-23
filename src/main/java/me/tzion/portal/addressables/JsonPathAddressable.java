@@ -1,7 +1,8 @@
-package com.morpheus.portal;
+package me.tzion.portal.addressables;
 
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.Option;
+import me.tzion.portal.core.Request;
 
 import static com.jayway.jsonpath.Configuration.defaultConfiguration;
 import static com.jayway.jsonpath.JsonPath.using;

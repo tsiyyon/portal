@@ -1,16 +1,13 @@
-package com.morpheus.portal;
+package me.tzion.portal.requests;
 
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.UriInfo;
+import me.tzion.portal.core.Request;
 
 import static com.jayway.jsonpath.JsonPath.using;
 
 public class JerseyRequest<T> implements Request<T> {
-    @Context
-    private UriInfo uriInfo;
-    T raw;
+    private T raw;
 
-    JerseyRequest(T raw) {
+    public JerseyRequest(T raw) {
         this.raw = raw;
     }
 

@@ -1,11 +1,13 @@
-package com.morpheus.portal;
+package me.tzion.portal;
 
+import me.tzion.portal.core.Request;
+import me.tzion.portal.requests.JerseyRequest;
 import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.morpheus.portal.JsonPathAddressable.jpath;
+import static me.tzion.portal.addressables.JsonPathAddressable.jpath;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
